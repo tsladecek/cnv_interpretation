@@ -6,7 +6,7 @@ from scripts.helpers import datacheck
 
 
 @datacheck
-def classifycnv_raw(output: str):
+def classifycnv_raw(output: str, **kwargs):
     dataset, cnv_type = os.path.split(output)[1].split('.')[0].split('_')
     print(dataset, cnv_type)
     bed_path = os.path.join(settings.ROOT_DIR, 'data', 'beds', f'{dataset}_{cnv_type}.bed')

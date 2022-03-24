@@ -48,15 +48,11 @@ def datacheck(func):
             return func(*args, **kwargs)
         elif os.path.exists(output):
             while True:
-                try:
-                    recreate = int(input(f'Reacreate {output}? (0 = No, 1 = Yes): '))
-                except ValueError:
-                    print('Only allowed values are 0 and 1')
-                else:
-                    if recreate not in [0, 1]:
-                        continue
+                recreate = input(f'Reacreate {output}? ([No] - default, Yes): ') or 'No'
+                recreate = recreate.lower()
+                if recreate in ['yes', 'no']:
                     break
-            if recreate == 1:
+            if recreate == 'yes':
                 return func(*args, **kwargs)
             else:
                 return
