@@ -16,6 +16,10 @@ def get_isv():
 
 
 def get_classifycnv():
+    return pd.read_csv(settings.CLASSIFYCNV_TABLE, sep='\t', compression='gzip')
+
+
+def install_classifycnv():
     if os.path.exists(os.path.join(settings.ROOT_DIR, settings.CLASSIFYCNV_DIR_NAME)):
         print('ClassifyCNV already installed. If you wish to download and reinstall it, '
               f'remove the {settings.CLASSIFYCNV_DIR_NAME}/ directory')

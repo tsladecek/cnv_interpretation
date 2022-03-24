@@ -14,7 +14,7 @@ def classify_table(output: str, **kwargs):
     for f in os.listdir(ccnv_path):
         df = pd.read_csv(os.path.join(ccnv_path, f), sep='\t')
         df = df.rename(columns={'Chromosome': 'chrom', 'Start': 'start', 'End': 'end', 'Type': 'cnv_type'})
-        df['dataset'] = f.split('_')[1]
+        df['dataset'] = f.split('_')[0]
         ccnv.append(df)
     ccnv = pd.concat(ccnv)
     ccnv.to_csv(output, sep='\t', compression='gzip', index=False)

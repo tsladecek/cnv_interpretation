@@ -3,15 +3,14 @@ import sys
 from argparse import ArgumentParser
 
 from scripts.config import settings
-from scripts.helpers import get_classifycnv
+from scripts.helpers import install_classifycnv
 from scripts.tables.classifycnv_raw import classifycnv_raw
 from scripts.tables.classifycnv_summary_table import classify_table
 from scripts.tables.isv_table import isv_table
 from scripts.tables.main_table import main_table
 
-
 if __name__ == '__main__':
-    parser = ArgumentParser('CNV Interpretation - Results')
+    parser = ArgumentParser('python main.py')
 
     parser.add_argument('-f', '--force', required=False, action='store_true', help='Force Recompute All')
     parser.add_argument('-rc', '--recompute_classifycnv', required=False, action='store_true')
@@ -29,7 +28,7 @@ if __name__ == '__main__':
 
     if args.recompute_classifycnv or args.force:
         # Download and install ClassifyCNV
-        get_classifycnv()
+        install_classifycnv()
 
         # Run ClassifyCNV
         for dataset in ['train', 'validation', 'test', 'test-long', 'test-multiple', 'likely', 'uncertain']:
