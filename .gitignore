@@ -3,3 +3,11 @@
 *.snakemake*
 *.Rhistory*
 *tests*
+
+plots/
+!plots/README.md
+!scripts/plots
+
+tables/
+!tables/README.md
+!scripts/tables
