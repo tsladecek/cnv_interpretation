@@ -11,3 +11,5 @@ plots/
 tables/
 !tables/README.md
 !scripts/tables
+
+ClassifyCNV*

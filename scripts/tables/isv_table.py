@@ -21,3 +21,7 @@ def isv_table(output: str, **kwargs):
     isv_df = pd.concat(isv_df)
 
     isv_df.to_csv(output, sep='\t', compression='gzip', index=False)
+
+
+if __name__ == '__main__':
+    isv_table(output=settings.ISV_TABLE)
