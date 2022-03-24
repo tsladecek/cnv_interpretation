@@ -2,16 +2,18 @@
 
 To reproduce results:
 
-1. Install requirements
+1. Activate Environment
 ```
-conda env create --file environment.yml
-```
-2. Activate environment
-```
-conda activate cnv_interpretation
+pipenv shell
 ```
 
-3. Run Snakemake
+2. Install Requirements
 ```
-snakemake
+pipenv install
+```
+
+3. Run `main.py` and follow prompts to recreate all results
+
+```
+python main.py
 ```
