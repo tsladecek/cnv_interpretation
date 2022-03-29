@@ -52,7 +52,7 @@ def datacheck(func):
             return func(*args, **kwargs)
         elif os.path.exists(output):
             while True:
-                recreate = input(f'Reacreate {output}? ([No] - default, Yes): ') or 'No'
+                recreate = input(f'Recreate {output}? ([No] - default, Yes): ') or 'No'
                 recreate = recreate.lower()
                 if recreate in ['yes', 'no']:
                     break
@@ -64,3 +64,26 @@ def datacheck(func):
             return func(*args, **kwargs)
 
     return check_data_wrapper
+
+
+def acmg_severity(score: float):
+    """https://www.nature.com/articles/s41436-019-0686-8"""
+
+    if score >= 0.99:
+        return 'Pathogenic'
+    elif score >= 0.9:
+        return 'Likely pathogenic'
+    elif score >= -0.89:
+        return 'Uncertain significance'
+    elif score > -0.99:
+        return 'Likely benign'
+    else:
+        return 'Benign'
+
+
+def isv_severity(probability: float, threshold: float = 0.95):
+    if probability >= threshold:
+        return 'Pathogenic'
+    elif probability <= 1 - threshold:
+        return 'Benign'
+    return 'Uncertain significance'
