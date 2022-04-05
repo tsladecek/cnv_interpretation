@@ -4,7 +4,10 @@ from argparse import ArgumentParser
 
 from scripts.config import settings
 from scripts.helpers import install_classifycnv
-from scripts.plots.bars import bars_database_comparison, bars_marcnv_options, bars_method_comparison
+from scripts.plots.bars import bars_database_comparison, bars_marcnv_options, bars_method_comparison, \
+    bars_method_comparison_together
+from scripts.plots.marcnv_isv_stack import marcnv_isv_stack
+from scripts.plots.marcnv_vs_isv import marcnv_vs_isv
 from scripts.tables.classifycnv_raw import classifycnv_raw
 from scripts.tables.classifycnv_summary_table import classify_table
 from scripts.tables.isv_table import isv_table
@@ -51,3 +54,7 @@ if __name__ == '__main__':
         bars_marcnv_options(output='plots/bars_marcnv_options' + settings.FIGURE_FORMAT, force_recreate=args.force)
         bars_method_comparison(output='plots/bars_method_comparison' + settings.FIGURE_FORMAT,
                                force_recreate=args.force)
+        bars_method_comparison_together(output='plots/bars_method_comparison_both_cnv_types' + settings.FIGURE_FORMAT,
+                                        force_recreate=args.force)
+        marcnv_vs_isv(output='plots/marcnv_vs_isv' + settings.FIGURE_FORMAT, force_recreate=args.force)
+        marcnv_isv_stack(output='plots/marcnv_isv_stack' + settings.FIGURE_FORMAT, force_recreate=args.force)

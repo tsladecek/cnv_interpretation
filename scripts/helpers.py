@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import requests as requests
 from matplotlib import pyplot as plt
+from sklearn.metrics import confusion_matrix, matthews_corrcoef
 
 from scripts.config import settings
 
@@ -21,10 +22,15 @@ def get_classifycnv():
     return pd.read_csv(settings.CLASSIFYCNV_TABLE, sep='\t', compression='gzip')
 
 
-def get_main(evaluation=True):
+def get_main(evaluation=True, final=False):
     df = pd.read_csv(settings.MAIN_TABLE, sep='\t', compression='gzip')
     if evaluation:
         df = df.query(' | '.join([f'dataset == "{d}"' for d in settings.EVALUATION_DATASETS]))
+
+    if final:
+        df = df.query(
+            f'benign_database == "{settings.MARCNV_BENIGN_DATABASE}" & hi_all == {settings.MARCNV_HI} & loss_benign_cnvs_with_gains == {settings.MARCNV_LB}')
+    df = df.reset_index(drop=True)
     return df
 
 
@@ -131,5 +137,45 @@ def barchart(results, ax, stacked=True):
                                                    color=["#009900", "#C0C0C0", "#FF0000"])
 
 
-def save_fig(output: str):
+def save_fig(output: str, fig):
+    fig.tight_layout()
     plt.savefig(output, dpi=settings.DPI)
+
+
+class Metrics:
+    def __init__(self, y, y_hat=None, isv_raw=None, marcnv=None, isv_ratio=1, likely_is_uncertain=True):
+
+        if y_hat is None:
+            isv = (isv_raw - 0.5) * isv_ratio
+            y_hat = marcnv + isv
+
+        y_hat_acmg = [acmg_severity(score) for score in y_hat]
+
+        temp = pd.DataFrame({"y": y, "marcnv_isv": y_hat_acmg})
+
+        if likely_is_uncertain:
+            temp = temp.replace({"Likely pathogenic": "Uncertain significance",
+                                 "Likely benign": "Uncertain significance"})
+        else:
+            temp = temp.replace({"Likely pathogenic": "Pathogenic",
+                                 "Likely benign": "Benign"})
+
+        temp = temp.query("marcnv_isv != 'Uncertain significance'")
+        temp = temp.replace({"Pathogenic": 1, "Benign": 0})
+
+        y = temp.y.values
+        y_hat = temp.marcnv_isv.values
+
+        self.y = y
+        self.y_hat = y_hat
+
+        self.n = len(y_hat_acmg)
+        self.included = len(temp) / len(y_hat_acmg)
+
+        TN, FP, FN, TP = confusion_matrix(y, y_hat).ravel()
+        self.TN, self.FP, self.FN, self.TP = TN, FP, FN, TP
+
+        self.accuracy = np.mean(y == y_hat)
+        self.sensitivity = TP / (TP + FN)
+        self.specificity = TN / (TN + FP)
+        self.mcc = matthews_corrcoef(y, y_hat)

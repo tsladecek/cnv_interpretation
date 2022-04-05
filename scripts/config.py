@@ -20,5 +20,13 @@ class Settings:
     DPI = 200
     FIGURE_FORMAT = '.png'
 
+    COLORS = {
+        'Benign': '#009900',
+        'Likely benign': '#99FF33',
+        'Uncertain significance': '#C0C0C0',
+        'Likely pathogenic': '#FF9999',
+        'Pathogenic': '#FF0000'
+    }
+
 
 settings = Settings()
