@@ -11,5 +11,14 @@ class Settings:
 
     CLASSIFYCNV_DIR_NAME = 'ClassifyCNV-1.1.1'
 
+    EVALUATION_DATASETS = ['test', 'test-multiple', 'test-long']
+
+    MARCNV_BENIGN_DATABASE = 'DGV-GS-OUTER'
+    MARCNV_HI = 1
+    MARCNV_LB = 0
+
+    DPI = 200
+    FIGURE_FORMAT = '.png'
+
 
 settings = Settings()

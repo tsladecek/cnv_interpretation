@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 
 from scripts.config import settings
 from scripts.helpers import install_classifycnv
+from scripts.plots.bars import bars_database_comparison, bars_marcnv_options, bars_method_comparison
 from scripts.tables.classifycnv_raw import classifycnv_raw
 from scripts.tables.classifycnv_summary_table import classify_table
 from scripts.tables.isv_table import isv_table
@@ -45,4 +46,8 @@ if __name__ == '__main__':
 
     # PLOTS
     if args.recompute_plots or args.force:
-        pass
+        bars_database_comparison(output='plots/bars_database_comparison' + settings.FIGURE_FORMAT,
+                                 force_recreate=args.force)
+        bars_marcnv_options(output='plots/bars_marcnv_options' + settings.FIGURE_FORMAT, force_recreate=args.force)
+        bars_method_comparison(output='plots/bars_method_comparison' + settings.FIGURE_FORMAT,
+                               force_recreate=args.force)
