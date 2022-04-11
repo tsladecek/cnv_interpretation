@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 
 from scripts.config import settings
-from scripts.helpers import get_main, save_fig
+from scripts.helpers import get_main, save_fig, datacheck
 
 
+@datacheck
 def marcnv_vs_isv(output: str, **kwargs):
     df = get_main(final=True)
 

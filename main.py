@@ -6,6 +6,7 @@ from scripts.config import settings
 from scripts.helpers import install_classifycnv
 from scripts.plots.bars import bars_database_comparison, bars_marcnv_options, bars_method_comparison, \
     bars_method_comparison_together
+from scripts.plots.marcnv_isv_split_distribution import marcnv_isv_split_distribution
 from scripts.plots.marcnv_isv_stack import marcnv_isv_stack
 from scripts.plots.marcnv_vs_isv import marcnv_vs_isv
 from scripts.tables.classifycnv_raw import classifycnv_raw
@@ -58,3 +59,5 @@ if __name__ == '__main__':
                                         force_recreate=args.force)
         marcnv_vs_isv(output='plots/marcnv_vs_isv' + settings.FIGURE_FORMAT, force_recreate=args.force)
         marcnv_isv_stack(output='plots/marcnv_isv_stack' + settings.FIGURE_FORMAT, force_recreate=args.force)
+        marcnv_isv_split_distribution(output='plots/marcnv_isv_split_distribution' + settings.FIGURE_FORMAT,
+                                      force_recreate=args.force)
