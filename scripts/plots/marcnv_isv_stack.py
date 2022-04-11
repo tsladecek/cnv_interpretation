@@ -3,9 +3,10 @@ import numpy as np
 import pandas as pd
 
 from scripts.config import settings
-from scripts.helpers import Metrics, get_main, save_fig
+from scripts.helpers import Metrics, get_main, save_fig, datacheck
 
 
+@datacheck
 def marcnv_isv_stack(output: str, **kwargs):
     df = get_main()
 
