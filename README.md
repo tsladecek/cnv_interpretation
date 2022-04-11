@@ -16,8 +16,10 @@ pipenv shell
 pipenv install
 ```
 
-3. Run `main.py` and follow prompts to recreate all results
+3. Run
 
 ```
 python main.py
 ```
+
+this will show a help page for the script. Choose a flag that is required for your use
