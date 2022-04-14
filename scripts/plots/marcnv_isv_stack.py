@@ -8,14 +8,14 @@ from scripts.helpers import Metrics, get_main, save_fig, datacheck
 
 @datacheck
 def marcnv_isv_stack(output: str, **kwargs):
-    df = get_main()
+    df = get_main(final=True)
 
     fig, ax = plt.subplots(2, 2, figsize=(20, 12), sharey=True, sharex=True)
 
     for c, cnv_type in enumerate(['DEL', 'DUP']):
         temp = df.query(f'cnv_type == "{cnv_type}"')
         results = []
-        for r in np.linspace(0, 3, 21):
+        for r in np.linspace(0, 3, 301):
             m = Metrics(y=temp.clinsig,
                         isv_raw=temp.isv_probability,
                         marcnv=temp.marcnv_score,
@@ -44,8 +44,8 @@ def marcnv_isv_stack(output: str, **kwargs):
         for i, col in enumerate([res.TP / m.n, res.TN / m.n, 1 - res.included, res.FP / m.n, res.FN / m.n]):
             ax[c, 1].plot(res.isv_ratio, col, color=pal[i], lw=5)
 
-    ax[0, 0].set_ylabel('DEL\nISV probability')
-    ax[1, 0].set_ylabel('DUP\nISV probability')
+    ax[0, 0].set_ylabel('DEL')
+    ax[1, 0].set_ylabel('DUP')
 
     ax[1, 0].set_xlabel('ISV ratio')
     ax[1, 1].set_xlabel('ISV ratio')
