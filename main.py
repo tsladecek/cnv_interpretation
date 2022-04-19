@@ -11,6 +11,7 @@ from scripts.plots.marcnv_isv_stack import marcnv_isv_stack
 from scripts.plots.marcnv_vs_isv import marcnv_vs_isv
 from scripts.tables.classifycnv_raw import classifycnv_raw
 from scripts.tables.classifycnv_summary_table import classify_table
+from scripts.tables.clinvar_marcnv_isv import clinvar_vs_marcnv_vs_isv, conflicting_predictions
 from scripts.tables.isv_table import isv_table
 from scripts.tables.main_table import main_table
 
@@ -47,6 +48,8 @@ if __name__ == '__main__':
         isv_table(output=settings.ISV_TABLE, force_recreate=args.force)
         classify_table(output=settings.CLASSIFYCNV_TABLE, force_recreate=args.force)
         main_table(output=settings.MAIN_TABLE, force_recreate=args.force)
+        clinvar_vs_marcnv_vs_isv(output='tables/clinvar_vs_marcnv_vs_isv.tsv', force_recreate=args.force)
+        conflicting_predictions(output='tables/conflicting_predictions.tsv', force_recreate=args.force)
 
     # PLOTS
     if args.recompute_plots or args.force:
