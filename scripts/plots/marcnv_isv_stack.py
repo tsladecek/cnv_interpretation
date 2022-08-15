@@ -6,6 +6,9 @@ from scripts.config import settings
 from scripts.helpers import Metrics, get_main, save_fig, datacheck
 
 
+FONT_SIZE = 18
+
+
 @datacheck
 def marcnv_isv_stack(output: str, **kwargs):
     df = get_main(final=True)
@@ -44,10 +47,13 @@ def marcnv_isv_stack(output: str, **kwargs):
         for i, col in enumerate([res.TP / m.n, res.TN / m.n, 1 - res.included, res.FP / m.n, res.FN / m.n]):
             ax[c, 1].plot(res.isv_ratio, col, color=pal[i], lw=5)
 
-    ax[0, 0].set_ylabel('DEL')
-    ax[1, 0].set_ylabel('DUP')
+    ax[0, 0].set_ylabel('DEL', size=FONT_SIZE)
+    ax[1, 0].set_ylabel('DUP', size=FONT_SIZE)
 
-    ax[1, 0].set_xlabel('ISV ratio')
-    ax[1, 1].set_xlabel('ISV ratio')
+    ax[1, 0].set_xlabel('ISV ratio', size=FONT_SIZE)
+    ax[1, 1].set_xlabel('ISV ratio', size=FONT_SIZE)
+
+    for tick in ax[0, 0].yaxis.get_major_ticks() + ax[1, 0].yaxis.get_major_ticks() + ax[1, 0].xaxis.get_major_ticks() + ax[1, 1].xaxis.get_major_ticks():
+        tick.label.set_fontsize(FONT_SIZE)
 
     save_fig(output=output, fig=fig)
