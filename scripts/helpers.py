@@ -62,16 +62,17 @@ def install_classifycnv():
 def datacheck(func):
     def check_data_wrapper(*args, **kwargs):
         output = kwargs['output']
+        plt.rcParams.update({'font.size': settings.FONT_SIZE, 'font.family': settings.FONT_FAMILY})
         force_recreate = True if 'force_recreate' in kwargs and kwargs['force_recreate'] else False
         if force_recreate:
             return func(*args, **kwargs)
         elif os.path.exists(output):
             while True:
-                recreate = input(f'Recreate {output}? ([No] - default, Yes): ') or 'No'
+                recreate = input(f'Recreate {output}? ([n] - default, y): ') or 'n'
                 recreate = recreate.lower()
-                if recreate in ['yes', 'no']:
+                if recreate in ['y', 'n']:
                     break
-            if recreate == 'yes':
+            if recreate == 'y':
                 return func(*args, **kwargs)
             else:
                 return
@@ -113,28 +114,37 @@ def bar_update(results, y, yh, method, likely_is_uncertain=True):
         yh = np.where(yh == "Likely pathogenic", "Pathogenic", yh)
         yh = np.where(yh == "Likely benign", "Benign", yh)
 
-    correct = np.sum(yh == y)
+    pathogenic_predictions = yh[np.where(y == 'Pathogenic')[0]]
+    benign_predictions = yh[np.where(y == 'Benign')[0]]
+
+    TP = len((np.where(pathogenic_predictions == 'Pathogenic')[0]))
+    FN = len((np.where(pathogenic_predictions == 'Benign')[0]))
+
+    TN = len((np.where(benign_predictions == 'Benign')[0]))
+    FP = len((np.where(benign_predictions == 'Pathogenic')[0]))
+
+    correct = TP + TN
     uncertain = np.sum(yh == "Uncertain significance")
     incorrect = np.sum(yh != y) - uncertain
-
-    print(np.unique(yh))
-    print(f"{method}\t{correct}\t{incorrect}\t{uncertain}")
 
     accuracy = correct / (correct + incorrect)
     included = (correct + incorrect) / (correct + incorrect + uncertain)
 
     label = '{}\nAccuracy: {:2.2f} %\nIncluded: {:2.2f} %' \
         .format(method, 100 * accuracy, 100 * included)
-    results.append([label, correct, uncertain, incorrect])
+    results.append([label, TP, TN, uncertain, FP, FN])
 
 
 def barchart(results, ax, stacked=True):
-    results = pd.DataFrame(results, columns=["label", "Correct", "Uncertain", "Incorrect"])
+    # results = pd.DataFrame(results, columns=["label", "Correct", "Uncertain", "Incorrect"])
+    results = pd.DataFrame(results, columns=["label", "TP", "TN", "Uncertain", "FP", "FN"])
 
     if stacked:
-        results.iloc[::-1].set_index('label').plot(kind='barh', stacked=True,
-                                                   ax=ax, width=0.8,
-                                                   color=["#009900", "#C0C0C0", "#FF0000"])
+        results.iloc[::-1].set_index('label').plot(
+            kind='barh', stacked=True,
+            ax=ax, width=0.8,
+            color=[settings.COLORS[c] for c in ["TP", "TN", "Uncertain", "FP", "FN"]]
+        )
 
 
 def save_fig(output: str, fig):

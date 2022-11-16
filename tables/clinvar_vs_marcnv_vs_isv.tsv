@@ -1,0 +1,151 @@
+cnv_type	clinvar	marcnv	isv	count
+DEL	Benign	Benign	Benign	243
+DEL	Benign	Benign	Uncertain significance	11
+DEL	Benign	Benign	Pathogenic	0
+DEL	Benign	Likely benign	Benign	0
+DEL	Benign	Likely benign	Uncertain significance	0
+DEL	Benign	Likely benign	Pathogenic	0
+DEL	Benign	Uncertain significance	Benign	2495
+DEL	Benign	Uncertain significance	Uncertain significance	531
+DEL	Benign	Uncertain significance	Pathogenic	10
+DEL	Benign	Likely pathogenic	Benign	5
+DEL	Benign	Likely pathogenic	Uncertain significance	19
+DEL	Benign	Likely pathogenic	Pathogenic	1
+DEL	Benign	Pathogenic	Benign	0
+DEL	Benign	Pathogenic	Uncertain significance	5
+DEL	Benign	Pathogenic	Pathogenic	7
+DEL	Likely benign	Benign	Benign	0
+DEL	Likely benign	Benign	Uncertain significance	0
+DEL	Likely benign	Benign	Pathogenic	0
+DEL	Likely benign	Likely benign	Benign	0
+DEL	Likely benign	Likely benign	Uncertain significance	0
+DEL	Likely benign	Likely benign	Pathogenic	0
+DEL	Likely benign	Uncertain significance	Benign	0
+DEL	Likely benign	Uncertain significance	Uncertain significance	0
+DEL	Likely benign	Uncertain significance	Pathogenic	0
+DEL	Likely benign	Likely pathogenic	Benign	0
+DEL	Likely benign	Likely pathogenic	Uncertain significance	0
+DEL	Likely benign	Likely pathogenic	Pathogenic	0
+DEL	Likely benign	Pathogenic	Benign	0
+DEL	Likely benign	Pathogenic	Uncertain significance	0
+DEL	Likely benign	Pathogenic	Pathogenic	0
+DEL	Uncertain significance	Benign	Benign	0
+DEL	Uncertain significance	Benign	Uncertain significance	0
+DEL	Uncertain significance	Benign	Pathogenic	0
+DEL	Uncertain significance	Likely benign	Benign	0
+DEL	Uncertain significance	Likely benign	Uncertain significance	0
+DEL	Uncertain significance	Likely benign	Pathogenic	0
+DEL	Uncertain significance	Uncertain significance	Benign	0
+DEL	Uncertain significance	Uncertain significance	Uncertain significance	0
+DEL	Uncertain significance	Uncertain significance	Pathogenic	0
+DEL	Uncertain significance	Likely pathogenic	Benign	0
+DEL	Uncertain significance	Likely pathogenic	Uncertain significance	0
+DEL	Uncertain significance	Likely pathogenic	Pathogenic	0
+DEL	Uncertain significance	Pathogenic	Benign	0
+DEL	Uncertain significance	Pathogenic	Uncertain significance	0
+DEL	Uncertain significance	Pathogenic	Pathogenic	0
+DEL	Likely pathogenic	Benign	Benign	0
+DEL	Likely pathogenic	Benign	Uncertain significance	0
+DEL	Likely pathogenic	Benign	Pathogenic	0
+DEL	Likely pathogenic	Likely benign	Benign	0
+DEL	Likely pathogenic	Likely benign	Uncertain significance	0
+DEL	Likely pathogenic	Likely benign	Pathogenic	0
+DEL	Likely pathogenic	Uncertain significance	Benign	0
+DEL	Likely pathogenic	Uncertain significance	Uncertain significance	0
+DEL	Likely pathogenic	Uncertain significance	Pathogenic	0
+DEL	Likely pathogenic	Likely pathogenic	Benign	0
+DEL	Likely pathogenic	Likely pathogenic	Uncertain significance	0
+DEL	Likely pathogenic	Likely pathogenic	Pathogenic	0
+DEL	Likely pathogenic	Pathogenic	Benign	0
+DEL	Likely pathogenic	Pathogenic	Uncertain significance	0
+DEL	Likely pathogenic	Pathogenic	Pathogenic	0
+DEL	Pathogenic	Benign	Benign	0
+DEL	Pathogenic	Benign	Uncertain significance	0
+DEL	Pathogenic	Benign	Pathogenic	0
+DEL	Pathogenic	Likely benign	Benign	0
+DEL	Pathogenic	Likely benign	Uncertain significance	0
+DEL	Pathogenic	Likely benign	Pathogenic	0
+DEL	Pathogenic	Uncertain significance	Benign	22
+DEL	Pathogenic	Uncertain significance	Uncertain significance	156
+DEL	Pathogenic	Uncertain significance	Pathogenic	251
+DEL	Pathogenic	Likely pathogenic	Benign	3
+DEL	Pathogenic	Likely pathogenic	Uncertain significance	67
+DEL	Pathogenic	Likely pathogenic	Pathogenic	402
+DEL	Pathogenic	Pathogenic	Benign	0
+DEL	Pathogenic	Pathogenic	Uncertain significance	28
+DEL	Pathogenic	Pathogenic	Pathogenic	1676
+DUP	Benign	Benign	Benign	65
+DUP	Benign	Benign	Uncertain significance	1
+DUP	Benign	Benign	Pathogenic	0
+DUP	Benign	Likely benign	Benign	18
+DUP	Benign	Likely benign	Uncertain significance	0
+DUP	Benign	Likely benign	Pathogenic	0
+DUP	Benign	Uncertain significance	Benign	1445
+DUP	Benign	Uncertain significance	Uncertain significance	114
+DUP	Benign	Uncertain significance	Pathogenic	3
+DUP	Benign	Likely pathogenic	Benign	0
+DUP	Benign	Likely pathogenic	Uncertain significance	0
+DUP	Benign	Likely pathogenic	Pathogenic	4
+DUP	Benign	Pathogenic	Benign	0
+DUP	Benign	Pathogenic	Uncertain significance	2
+DUP	Benign	Pathogenic	Pathogenic	1
+DUP	Likely benign	Benign	Benign	0
+DUP	Likely benign	Benign	Uncertain significance	0
+DUP	Likely benign	Benign	Pathogenic	0
+DUP	Likely benign	Likely benign	Benign	0
+DUP	Likely benign	Likely benign	Uncertain significance	0
+DUP	Likely benign	Likely benign	Pathogenic	0
+DUP	Likely benign	Uncertain significance	Benign	0
+DUP	Likely benign	Uncertain significance	Uncertain significance	0
+DUP	Likely benign	Uncertain significance	Pathogenic	0
+DUP	Likely benign	Likely pathogenic	Benign	0
+DUP	Likely benign	Likely pathogenic	Uncertain significance	0
+DUP	Likely benign	Likely pathogenic	Pathogenic	0
+DUP	Likely benign	Pathogenic	Benign	0
+DUP	Likely benign	Pathogenic	Uncertain significance	0
+DUP	Likely benign	Pathogenic	Pathogenic	0
+DUP	Uncertain significance	Benign	Benign	0
+DUP	Uncertain significance	Benign	Uncertain significance	0
+DUP	Uncertain significance	Benign	Pathogenic	0
+DUP	Uncertain significance	Likely benign	Benign	0
+DUP	Uncertain significance	Likely benign	Uncertain significance	0
+DUP	Uncertain significance	Likely benign	Pathogenic	0
+DUP	Uncertain significance	Uncertain significance	Benign	0
+DUP	Uncertain significance	Uncertain significance	Uncertain significance	0
+DUP	Uncertain significance	Uncertain significance	Pathogenic	0
+DUP	Uncertain significance	Likely pathogenic	Benign	0
+DUP	Uncertain significance	Likely pathogenic	Uncertain significance	0
+DUP	Uncertain significance	Likely pathogenic	Pathogenic	0
+DUP	Uncertain significance	Pathogenic	Benign	0
+DUP	Uncertain significance	Pathogenic	Uncertain significance	0
+DUP	Uncertain significance	Pathogenic	Pathogenic	0
+DUP	Likely pathogenic	Benign	Benign	0
+DUP	Likely pathogenic	Benign	Uncertain significance	0
+DUP	Likely pathogenic	Benign	Pathogenic	0
+DUP	Likely pathogenic	Likely benign	Benign	0
+DUP	Likely pathogenic	Likely benign	Uncertain significance	0
+DUP	Likely pathogenic	Likely benign	Pathogenic	0
+DUP	Likely pathogenic	Uncertain significance	Benign	0
+DUP	Likely pathogenic	Uncertain significance	Uncertain significance	0
+DUP	Likely pathogenic	Uncertain significance	Pathogenic	0
+DUP	Likely pathogenic	Likely pathogenic	Benign	0
+DUP	Likely pathogenic	Likely pathogenic	Uncertain significance	0
+DUP	Likely pathogenic	Likely pathogenic	Pathogenic	0
+DUP	Likely pathogenic	Pathogenic	Benign	0
+DUP	Likely pathogenic	Pathogenic	Uncertain significance	0
+DUP	Likely pathogenic	Pathogenic	Pathogenic	0
+DUP	Pathogenic	Benign	Benign	0
+DUP	Pathogenic	Benign	Uncertain significance	0
+DUP	Pathogenic	Benign	Pathogenic	0
+DUP	Pathogenic	Likely benign	Benign	0
+DUP	Pathogenic	Likely benign	Uncertain significance	0
+DUP	Pathogenic	Likely benign	Pathogenic	0
+DUP	Pathogenic	Uncertain significance	Benign	17
+DUP	Pathogenic	Uncertain significance	Uncertain significance	27
+DUP	Pathogenic	Uncertain significance	Pathogenic	202
+DUP	Pathogenic	Likely pathogenic	Benign	0
+DUP	Pathogenic	Likely pathogenic	Uncertain significance	8
+DUP	Pathogenic	Likely pathogenic	Pathogenic	790
+DUP	Pathogenic	Pathogenic	Benign	1
+DUP	Pathogenic	Pathogenic	Uncertain significance	14
+DUP	Pathogenic	Pathogenic	Pathogenic	500

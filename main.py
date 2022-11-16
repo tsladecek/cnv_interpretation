@@ -6,6 +6,7 @@ from scripts.config import settings
 from scripts.helpers import install_classifycnv
 from scripts.plots.bars import bars_database_comparison, bars_marcnv_options, bars_method_comparison, \
     bars_method_comparison_together
+from scripts.plots.benign_db_comparison import benign_db_comparison
 from scripts.plots.marcnv_isv_split_distribution import marcnv_isv_split_distribution
 from scripts.plots.marcnv_isv_stack import marcnv_isv_stack
 from scripts.plots.marcnv_vs_isv import marcnv_vs_isv
@@ -53,14 +54,15 @@ if __name__ == '__main__':
 
     # PLOTS
     if args.recompute_plots or args.force:
+        benign_db_comparison(output='plots/figure_1' + settings.FIGURE_FORMAT, force_recreate=args.force)
+        bars_marcnv_options(output='plots/figure_2' + settings.FIGURE_FORMAT, force_recreate=args.force)
+        bars_method_comparison(output='plots/figure_3' + settings.FIGURE_FORMAT,
+                               force_recreate=args.force)
+        marcnv_isv_stack(output='plots/figure_4' + settings.FIGURE_FORMAT, force_recreate=args.force)
         bars_database_comparison(output='plots/bars_database_comparison' + settings.FIGURE_FORMAT,
                                  force_recreate=args.force)
-        bars_marcnv_options(output='plots/bars_marcnv_options' + settings.FIGURE_FORMAT, force_recreate=args.force)
-        bars_method_comparison(output='plots/bars_method_comparison' + settings.FIGURE_FORMAT,
-                               force_recreate=args.force)
         bars_method_comparison_together(output='plots/bars_method_comparison_both_cnv_types' + settings.FIGURE_FORMAT,
                                         force_recreate=args.force)
         marcnv_vs_isv(output='plots/marcnv_vs_isv' + settings.FIGURE_FORMAT, force_recreate=args.force)
-        marcnv_isv_stack(output='plots/marcnv_isv_stack' + settings.FIGURE_FORMAT, force_recreate=args.force)
         marcnv_isv_split_distribution(output='plots/marcnv_isv_split_distribution' + settings.FIGURE_FORMAT,
                                       force_recreate=args.force)

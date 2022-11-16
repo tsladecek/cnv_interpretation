@@ -17,15 +17,21 @@ class Settings:
     MARCNV_HI = 1
     MARCNV_LB = 0
 
-    DPI = 200
+    DPI = 300
     FIGURE_FORMAT = '.png'
+    FONT_SIZE = 5
+    FONT_FAMILY = 'sans-serif'
 
     COLORS = {
-        'Benign': '#009900',
-        'Likely benign': '#99FF33',
-        'Uncertain significance': '#C0C0C0',
-        'Likely pathogenic': '#FF9999',
-        'Pathogenic': '#FF0000'
+        'TP': '#81B773',
+        'TN': '#AAE59A',
+        'Uncertain': '#D5DBD6',
+        'FP': '#FDCBC0',
+        'FN': '#F48B8B',
+        'Benign': '#81B773',
+        'Likely benign': '#AAE59A',
+        'Likely pathogenic': '#FDCBC0',
+        'Pathogenic': '#F48B8B'
     }
 
 

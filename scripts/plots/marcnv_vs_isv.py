@@ -15,7 +15,7 @@ def marcnv_vs_isv(output: str, **kwargs):
 
     furthest = max(-1 * min(df.marcnv_score), max(df.marcnv_score))
 
-    fig, ax = plt.subplots(1, 2, figsize=(12, 7))
+    fig, ax = plt.subplots(1, 2, figsize=(7, 4))
 
     for c, cnv_type in enumerate(['DEL', 'DUP']):
         for clinsig in ['Pathogenic', 'Benign']:
@@ -40,9 +40,9 @@ def marcnv_vs_isv(output: str, **kwargs):
             ax[c].axvline(0.95, ls=LINE_LS, c=settings.COLORS['Pathogenic'],
                           lw=LINE_WIDTH, alpha=LINE_ALPHA)
 
-            ax[c].axhline(0, ls=LINE_LS, c=settings.COLORS['Uncertain significance'],
+            ax[c].axhline(0, ls=LINE_LS, c=settings.COLORS['Uncertain'],
                           lw=LINE_WIDTH, alpha=LINE_ALPHA)
-            ax[c].axvline(0.5, ls=LINE_LS, c=settings.COLORS['Uncertain significance'],
+            ax[c].axvline(0.5, ls=LINE_LS, c=settings.COLORS['Uncertain'],
                           lw=LINE_WIDTH, alpha=LINE_ALPHA)
 
             ax[c].set_ylim(- furthest - 0.2, furthest + 0.2)
