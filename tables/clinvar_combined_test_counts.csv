@@ -1,0 +1,11 @@
+ClinVar	Combined	Count
+Benign	Benign	9298
+Benign	Likely benign	12
+Benign	Likely pathogenic 	6
+Benign	Pathogenic	18
+Benign	Uncertain significance	2688
+Pathogenic	Benign	63
+Pathogenic	Likely benign	25
+Pathogenic	Likely pathogenic 	162
+Pathogenic	Pathogenic	1807
+Pathogenic	Uncertain significance	1041

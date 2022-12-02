@@ -1,0 +1,118 @@
+P CI  [10]  P combined_1.99
+LP CI  [3]  P combined_1.99 #f43108
+VUS CI  [1]  P combined_1.99 #f1738d
+P CI  [1]  LP combined_1.99 #f43108
+LP CI  [2]  LP combined_1.99
+VUS CI  [3]  LP combined_1.99 #fba08d
+P CI  [1]  VUS combined_1.99 #f1738d
+LP CI  [4]  VUS combined_1.99 #fba08d
+VUS CI  [19]  VUS combined_1.99
+VUS CI  [11]  LB combined_1.99 #7fc780
+LB CI  [3]  LB combined_1.99
+VUS CI  [4]  B combined_1.99 #aae59c
+B CI  [1]  B combined_1.99
+
+: P CI #eb2d2d
+: P combined_1.99 #eb2d2d
+: LP CI #fa7639
+: LP combined_1.99 #fa7639
+: VUS CI #B2BEB5
+: VUS combined_1.99 #B2BEB5
+: LB CI #64cf48
+: LB combined_1.99 #64cf48
+: B CI #25820d
+: B combined_1.99 #25820d
+
+
+# CI vs. 
+P CI  [9]  P combined_0.19
+LP CI  [2]  P combined_0.19 #f43108
+VUS CI  [1]  P combined_0.19 #dfa9aa
+P CI  [3]  VUS combined_0.19 #f1738d
+LP CI  [7]  VUS combined_0.19 #fba08d
+VUS CI  [37]  VUS combined_0.19
+LB CI  [3]  VUS combined_0.19 #7fc780
+B CI  [1]  B combined_0.19
+
+: P CI #eb2d2d
+: P combined_0.19 #c31237
+: LP CI #fa7639
+: VUS CI #B2BEB5
+: VUS combined_0.19 #B2BEB5
+: LB CI #64cf48
+: B CI #25820d
+: B combined_0.19 #25820d
+
+
+
+# CI - > MarCNV - > combined MarCNV + ISV
+P CI  [7]  P MarCNV
+LP CI  [1]  P MarCNV #f43108
+VUS CI  [1]  P MarCNV #dfa9aa
+P CI  [2]  LP MarCNV #f43108
+LP CI  [1]  LP MarCNV
+P CI  [3]  VUS MarCNV #f1738d
+LP CI  [7]  VUS MarCNV #fba08d
+VUS CI  [37]  VUS MarCNV
+LB CI  [3]  VUS MarCNV
+B CI  [1]  B MarCNV
+
+P MarCNV  [9]  P combined
+LP MarCNV  [3]  P combined #f43108
+VUS MarCNV  [1]  LP combined #fba08d
+VUS MarCNV  [49]  VUS combined
+B MarCNV  [1]  B combined
+
+: P CI #eb2d2d
+: P MarCNV #eb2d2d
+: P combined #eb2d2d
+: LP CI #fa7639
+: LP MarCNV #fa7639
+: LP combined #fa7639
+: VUS CI #B2BEB5
+: VUS MarCNV #B2BEB5
+: VUS combined #B2BEB5
+: LB CI #64cf48
+: B CI #25820d
+: B MarCNV #25820d
+: B combined #25820d
+
+
+# MarCNV vs. ISV
+
+P MarCNV  [8]  P ISV
+LP MarCNV  [3]  P ISV #f43108
+VUS MarCNV  [8]  P ISV #dfa9aa
+P MarCNV  [1]  VUS ISV #dfa9aa
+VUS MarCNV  [24]  VUS ISV
+VUS MarCNV  [18]  B ISV #aae59c
+B MarCNV  [1]  B ISV
+
+
+: P MarCNV #eb2d2d
+: LP MarCNV #fa7639
+: VUS MarCNV #B2BEB5
+: B MarCNV #25820d
+: P ISV #eb2d2d
+: VUS ISV #B2BEB5
+: B ISV #25820d
+
+
+# CLinVar TEST vs combined
+B ClinVar  [9298]  B combined
+B ClinVar  [12]  LB combined #7fc780
+B ClinVar  [6]  LP combined
+B ClinVar  [18]  P combined
+B ClinVar  [2688]  VUS combined #aae59c
+P ClinVar  [63]  B combined
+P ClinVar  [25]  LB combined
+P ClinVar  [162]  LP combined #f43108
+P ClinVar  [1807]  P combined
+P ClinVar  [1041]  VUS combined #dfa9aa
+
+: P ClinVar #eb2d2d
+: P combined #eb2d2d
+: LP combined #fa7639
+: VUS combined #B2BEB5
+: B combined #25820d
+: B ClinVar #25820d
