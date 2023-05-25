@@ -66,3 +66,9 @@ if __name__ == '__main__':
         marcnv_vs_isv(output='plots/marcnv_vs_isv' + settings.FIGURE_FORMAT, force_recreate=args.force)
         marcnv_isv_split_distribution(output='plots/marcnv_isv_split_distribution' + settings.FIGURE_FORMAT,
                                       force_recreate=args.force)
+        bars_method_comparison(output='plots/benign_cnvs_method_comparison' + settings.FIGURE_FORMAT,
+                               clinsig='Benign',
+                               force_recreate=args.force)
+        bars_method_comparison(output='plots/pathogenic_cnvs_method_comparison' + settings.FIGURE_FORMAT,
+                               clinsig='Pathogenic',
+                               force_recreate=args.force)

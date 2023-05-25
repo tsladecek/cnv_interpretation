@@ -24,10 +24,10 @@ class Settings:
 
     COLORS = {
         'TP': '#81B773',
-        'TN': '#AAE59A',
+        'TN': '#7286D3',
         'Uncertain': '#D5DBD6',
-        'FP': '#FDCBC0',
-        'FN': '#F48B8B',
+        'FP': '#FFB84C',
+        'FN': '#FEFF86',
         'Benign': '#81B773',
         'Likely benign': '#AAE59A',
         'Likely pathogenic': '#FDCBC0',

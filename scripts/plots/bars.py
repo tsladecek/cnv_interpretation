@@ -41,7 +41,8 @@ def bars_marcnv_options(output: str, **kwargs):
                 marcnv = temp.query(
                     f'benign_database == "{settings.MARCNV_BENIGN_DATABASE}" & hi_all == {hi} & loss_benign_cnvs_with_gains == 0').loc[
                          :, ['chrom', 'start', 'end', 'cnv_type', 'marcnv_severity', 'clinsig']]
-                bar_update(results=res, y=marcnv.clinsig, yh=marcnv.marcnv_severity, method=f'HI (1, 2, 3): {hi}')
+                bar_update(results=res, y=marcnv.clinsig, yh=marcnv.marcnv_severity,
+                           method=fr'HI gene score $\geq$ 1' if hi == 1 else 'HI gene score = 0')
         else:
             for hi in [0, 1]:
                 # for lb in [0, 1]:
@@ -49,7 +50,7 @@ def bars_marcnv_options(output: str, **kwargs):
                     f'benign_database == "{settings.MARCNV_BENIGN_DATABASE}" & hi_all == {hi} & loss_benign_cnvs_with_gains == 0').loc[
                          :, ['chrom', 'start', 'end', 'cnv_type', 'marcnv_severity', 'clinsig']]
                 bar_update(results=res, y=marcnv.clinsig, yh=marcnv.marcnv_severity,
-                           method=f'HI (1, 2, 3): {hi}')
+                           method=fr'HI gene score $\geq$ 1' if hi == 1 else r'HI gene score = 0')
                 # method=f'HI (1, 2, 3): {hi}\nOnly Loss CNVs: {lb}')
 
         barchart(res, ax=ax[c])
@@ -61,17 +62,20 @@ def bars_marcnv_options(output: str, **kwargs):
 
 
 @datacheck
-def bars_method_comparison(output: str, **kwargs):
+def bars_method_comparison(output: str, clinsig=None, **kwargs):
     df = get_main()
     LIKELY_IS_UNCERTAIN = True
     fig, ax = plt.subplots(2, 1, figsize=(7, 4))
+
+    if clinsig:
+        df = df.query(f'clinsig == "{clinsig}"')
 
     for c, cnv_type in enumerate(['DEL', 'DUP']):
         res = []
         temp = df.query(f'cnv_type == "{cnv_type}"')
 
         # CLASSIFYCNV
-        ccnv = temp.loc[:, ['chrom', 'start', 'end', 'cnv_type', 'classifycnv_severity', 'clinsig']].drop_duplicates()
+        ccnv = temp.loc[:, ['chrom', 'start', 'end', 'cnv_type', 'classifycnv_severity', 'classifycnv_score', 'clinsig']].drop_duplicates()
         bar_update(results=res, y=ccnv.clinsig, yh=ccnv.classifycnv_severity, method=f'ClassifyCNV',
                    likely_is_uncertain=LIKELY_IS_UNCERTAIN)
 
@@ -86,6 +90,11 @@ def bars_method_comparison(output: str, **kwargs):
         isv_df = temp.loc[:,
                  ['chrom', 'start', 'end', 'cnv_type', 'isv_severity', 'isv_probability', 'clinsig']].drop_duplicates()
         bar_update(results=res, y=isv_df.clinsig, yh=isv_df.isv_severity, method=f'ISV')
+
+        # ClassifyCNV + ISV
+        yh = ccnv.classifycnv_score.values + isv_df.isv_probability.values - 0.5
+        yh = np.array([acmg_severity(s) for s in yh])
+        bar_update(results=res, y=isv_df.clinsig, yh=yh, method=f'ClassifyCNV + ISV')
 
         # MARCNV + ISV
         yh = marcnv.marcnv_score.values + isv_df.isv_probability.values - 0.5

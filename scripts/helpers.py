@@ -130,22 +130,36 @@ def bar_update(results, y, yh, method, likely_is_uncertain=True):
     accuracy = correct / (correct + incorrect)
     included = (correct + incorrect) / (correct + incorrect + uncertain)
 
-    label = '{}\nAccuracy: {:2.2f} %\nIncluded: {:2.2f} %' \
-        .format(method, 100 * accuracy, 100 * included)
-    results.append([label, TP, TN, uncertain, FP, FN])
+    label = method
+    metrics = 'Acc.: {:2.2f} %\nUna.: {:2.2f} %' \
+        .format(100 * accuracy, 100 * included)
+    results.append([label, metrics, TP, TN, uncertain, FP, FN])
 
 
-def barchart(results, ax, stacked=True):
+def barchart(results, ax, stacked=True, show_legend=True):
     # results = pd.DataFrame(results, columns=["label", "Correct", "Uncertain", "Incorrect"])
-    results = pd.DataFrame(results, columns=["label", "TP", "TN", "Uncertain", "FP", "FN"])
+    results = pd.DataFrame(results, columns=["label", "metrics", "TP", "TN", "Uncertain", "FP", "FN"])
+    metrics = results.loc[:, 'metrics'].values[::-1]
 
     if stacked:
-        results.iloc[::-1].set_index('label').plot(
+        results.drop('metrics', axis=1).iloc[::-1].set_index('label').plot(
             kind='barh', stacked=True,
             ax=ax, width=0.8,
             color=[settings.COLORS[c] for c in ["TP", "TN", "Uncertain", "FP", "FN"]]
         )
+        ax.set_ylabel('')
 
+        ax2 = ax.twinx()
+        results.drop('label', axis=1).iloc[::-1].set_index('metrics').plot(
+            kind='barh', stacked=True,
+            ax=ax2, width=0.8,
+            color=[settings.COLORS[c] for c in ["TP", "TN", "Uncertain", "FP", "FN"]]
+        )
+        ax2.set_ylabel('')
+
+        if not show_legend:
+            ax.get_legend().remove()
+            ax2.get_legend().remove()
 
 def save_fig(output: str, fig):
     fig.tight_layout()
