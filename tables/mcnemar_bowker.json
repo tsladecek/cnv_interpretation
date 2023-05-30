@@ -1,0 +1,426 @@
+{
+  "DEL": {
+    "isv vs classifycnv": {
+      "Test Statistic": 2602.395194165313,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          479,
+          2289,
+          0
+        ],
+        [
+          54,
+          738,
+          25
+        ],
+        [
+          0,
+          541,
+          1806
+        ]
+      ]
+    },
+    "isv vs marcnv": {
+      "Test Statistic": 3063.440493054958,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          243,
+          2525,
+          0
+        ],
+        [
+          11,
+          773,
+          33
+        ],
+        [
+          0,
+          664,
+          1683
+        ]
+      ]
+    },
+    "isv vs classifycnv_isv": {
+      "Test Statistic": 1839.6882704719394,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          976,
+          1792,
+          0
+        ],
+        [
+          51,
+          715,
+          51
+        ],
+        [
+          0,
+          320,
+          2027
+        ]
+      ]
+    },
+    "isv vs marcnv_isv": {
+      "Test Statistic": 1788.9711688311688,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          1022,
+          1746,
+          0
+        ],
+        [
+          14,
+          714,
+          89
+        ],
+        [
+          0,
+          261,
+          2086
+        ]
+      ]
+    },
+    "classifycnv vs marcnv": {
+      "Test Statistic": 218.73411694688292,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          192,
+          341,
+          0
+        ],
+        [
+          62,
+          3305,
+          201
+        ],
+        [
+          0,
+          316,
+          1515
+        ]
+      ]
+    },
+    "classifycnv vs classifycnv_isv": {
+      "Test Statistic": 723.4493930905696,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          528,
+          5,
+          0
+        ],
+        [
+          499,
+          2818,
+          251
+        ],
+        [
+          0,
+          4,
+          1827
+        ]
+      ]
+    },
+    "classifycnv vs marcnv_isv": {
+      "Test Statistic": 550.4331798861499,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          296,
+          237,
+          0
+        ],
+        [
+          740,
+          2453,
+          375
+        ],
+        [
+          0,
+          31,
+          1800
+        ]
+      ]
+    },
+    "marcnv vs classifycnv_isv": {
+      "Test Statistic": 897.8814638205149,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          204,
+          50,
+          0
+        ],
+        [
+          823,
+          2651,
+          488
+        ],
+        [
+          0,
+          126,
+          1590
+        ]
+      ]
+    },
+    "marcnv vs marcnv_isv": {
+      "Test Statistic": 1231.2132196162047,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          254,
+          0,
+          0
+        ],
+        [
+          782,
+          2716,
+          464
+        ],
+        [
+          0,
+          5,
+          1711
+        ]
+      ]
+    },
+    "classifycnv_isv vs marcnv_isv": {
+      "Test Statistic": 39.85529765794548,
+      "p-value": 1.1434801328036315e-08,
+      "contingency_table": [
+        [
+          770,
+          257,
+          0
+        ],
+        [
+          266,
+          2394,
+          167
+        ],
+        [
+          0,
+          70,
+          2008
+        ]
+      ]
+    }
+  },
+  "DUP": {
+    "isv vs classifycnv": {
+      "Test Statistic": 2514.5784639536287,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          196,
+          1349,
+          1
+        ],
+        [
+          3,
+          150,
+          13
+        ],
+        [
+          0,
+          1212,
+          288
+        ]
+      ]
+    },
+    "isv vs marcnv": {
+      "Test Statistic": 2430.011567872859,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          65,
+          1480,
+          1
+        ],
+        [
+          1,
+          149,
+          16
+        ],
+        [
+          0,
+          999,
+          501
+        ]
+      ]
+    },
+    "isv vs classifycnv_isv": {
+      "Test Statistic": 1432.1810215695748,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          289,
+          1257,
+          0
+        ],
+        [
+          4,
+          142,
+          20
+        ],
+        [
+          0,
+          241,
+          1259
+        ]
+      ]
+    },
+    "isv vs marcnv_isv": {
+      "Test Statistic": 1457.8083585150011,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          235,
+          1311,
+          0
+        ],
+        [
+          1,
+          144,
+          21
+        ],
+        [
+          0,
+          205,
+          1295
+        ]
+      ]
+    },
+    "classifycnv vs marcnv": {
+      "Test Statistic": 298.9985347985348,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          35,
+          164,
+          0
+        ],
+        [
+          31,
+          2460,
+          220
+        ],
+        [
+          0,
+          4,
+          298
+        ]
+      ]
+    },
+    "classifycnv vs classifycnv_isv": {
+      "Test Statistic": 1065.0366225839266,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          199,
+          0,
+          0
+        ],
+        [
+          94,
+          1637,
+          980
+        ],
+        [
+          0,
+          3,
+          299
+        ]
+      ]
+    },
+    "classifycnv vs marcnv_isv": {
+      "Test Statistic": 1010.1737334203087,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          51,
+          148,
+          0
+        ],
+        [
+          185,
+          1508,
+          1018
+        ],
+        [
+          0,
+          4,
+          298
+        ]
+      ]
+    },
+    "marcnv vs classifycnv_isv": {
+      "Test Statistic": 893.9551383097178,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          39,
+          27,
+          0
+        ],
+        [
+          254,
+          1586,
+          788
+        ],
+        [
+          0,
+          27,
+          491
+        ]
+      ]
+    },
+    "marcnv vs marcnv_isv": {
+      "Test Statistic": 960.0794044665013,
+      "p-value": 0.0,
+      "contingency_table": [
+        [
+          66,
+          0,
+          0
+        ],
+        [
+          170,
+          1656,
+          802
+        ],
+        [
+          0,
+          4,
+          514
+        ]
+      ]
+    },
+    "classifycnv_isv vs marcnv_isv": {
+      "Test Statistic": 46.03226724874253,
+      "p-value": 5.582595496989029e-10,
+      "contingency_table": [
+        [
+          136,
+          157,
+          0
+        ],
+        [
+          100,
+          1501,
+          39
+        ],
+        [
+          0,
+          2,
+          1277
+        ]
+      ]
+    }
+  }
+}

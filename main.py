@@ -15,6 +15,7 @@ from scripts.tables.classifycnv_summary_table import classify_table
 from scripts.tables.clinvar_marcnv_isv import clinvar_vs_marcnv_vs_isv, conflicting_predictions
 from scripts.tables.isv_table import isv_table
 from scripts.tables.main_table import main_table
+from scripts.tables.method_comparison import method_comparison, mcnemar_bowker
 
 if __name__ == '__main__':
     parser = ArgumentParser('python main.py')
@@ -51,6 +52,8 @@ if __name__ == '__main__':
         main_table(output=settings.MAIN_TABLE, force_recreate=args.force)
         clinvar_vs_marcnv_vs_isv(output='tables/clinvar_vs_marcnv_vs_isv.tsv', force_recreate=args.force)
         conflicting_predictions(output='tables/conflicting_predictions.tsv', force_recreate=args.force)
+        method_comparison(output='tables/method_comparison.tsv', force_recreate=args.force)
+        mcnemar_bowker(output='tables/mcnemar_bowker.json', force_recreate=args.force)
 
     # PLOTS
     if args.recompute_plots or args.force:
