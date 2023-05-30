@@ -1,0 +1,169 @@
+// CI (Clinical interpretation) - > MarCNV - > combined MarCNV + ISV
+
+P CI  [7]  P MarCNV
+LP CI  [1]  P MarCNV #FF4A0B
+VUS CI  [1]  P MarCNV #DE6063
+P CI  [2]  LP MarCNV #FF4A0B
+LP CI  [1]  LP MarCNV
+P CI  [3]  VUS MarCNV #DE6063
+LP CI  [7]  VUS MarCNV #DE9C60
+VUS CI  [37]  VUS MarCNV
+LB CI  [3]  VUS MarCNV #97B2CC
+B CI  [1]  B MarCNV
+
+P MarCNV  [9]  P combined
+LP MarCNV  [3]  P combined #FF4A0B
+VUS MarCNV  [1]  LP combined #DE9C60
+VUS MarCNV  [49]  VUS combined
+B MarCNV  [1]  B combined
+
+: P MarCNV #FF0E0E
+: LP MarCNV #FF8608
+: VUS MarCNV #BDB2B7
+: B MarCNV #2200FF
+
+: P CI #FF0E0E
+: LP CI #FF8608
+: VUS CI #BDB2B7
+: LB CI #71B2E0
+: B CI #2200FF
+
+: P combined #FF0E0E
+: LP combined #FF8608
+: VUS combined #BDB2B7
+: B combined #2200FF
+
+
+
+// CI (Clinical interpretation) - > ISV - > combined MarCNV + ISV
+
+P CI  [11]  P ISV
+LP CI  [5]  P ISV #FF4A0B
+VUS CI  [3]  P ISV #DE6063
+P CI  [1]  VUS ISV #DE6063
+LP CI  [4]  VUS ISV #DE9C60
+VUS CI  [20]  VUS ISV
+VUS CI  [15]  B ISV #7059DB
+LB CI  [3]  B ISV #4A59F0
+B CI  [1]  B ISV
+
+P ISV  [11]  P combined
+VUS ISV  [1]  P combined #DE6063
+P ISV  [1]  LP combined #FF4A0B
+P ISV  [7]  VUS combined #DE6063
+VUS ISV  [24]  VUS combined
+B ISV  [18]  VUS combined #7059DB
+B ISV  [1]  B combined
+
+: P CI #FF0E0E
+: P ISV #FF0E0E
+: LP CI #FF8608
+: VUS CI #BDB2B7
+: VUS ISV #BDB2B7
+: LB CI #71B2E0
+: B CI #2200FF
+: B ISV #2200FF
+
+: P combined #FF0E0E
+: LP combined #FF8608
+: VUS combined #BDB2B7
+: B combined #2200FF
+
+
+
+// CI vs combined 0.19
+
+P CI  [9]  P combined_0.19
+LP CI  [2]  P combined_0.19 #FF4A0B
+VUS CI  [1]  P combined_0.19 #DE6063
+P CI  [3]  VUS combined_0.19 #DE6063
+LP CI  [7]  VUS combined_0.19 #DE9C60
+VUS CI  [37]  VUS combined_0.19
+LB CI  [3]  VUS combined_0.19 #97B2CC
+B CI  [1]  B combined_0.19
+
+: P CI #FF0E0E
+: LP CI #FF8608
+: VUS CI #BDB2B7
+: LB CI #71B2E0
+: B CI #2200FF
+
+: P combined_0.19 #FF0E0E
+: VUS combined_0.19 #BDB2B7
+: B combined_0.19 #2200FF
+
+
+
+// CI vs combined 1.99
+
+P CI  [10]  P combined_1.99
+LP CI  [3]  P combined_1.99 #FF4A0B
+VUS CI  [1]  P combined_1.99 #DE6063
+P CI  [1]  LP combined_1.99 #FF4A0B
+LP CI  [2]  LP combined_1.99
+VUS CI  [3]  LP combined_1.99 #fba08d
+P CI  [1]  VUS combined_1.99 #DE6063
+LP CI  [4]  VUS combined_1.99 #DE9C60
+VUS CI  [19]  VUS combined_1.99
+VUS CI  [11]  LB combined_1.99 #97B2CC
+LB CI  [3]  LB combined_1.99
+VUS CI  [4]  B combined_1.99 #7059DB
+B CI  [1]  B combined_1.99
+
+: P CI #FF0E0E
+: LP CI #FF8608
+: VUS CI #BDB2B7
+: LB CI #71B2E0
+: B CI #2200FF
+
+: P combined_1.99 #FF0E0E
+: LP combined_1.99 #FF8608
+: VUS combined_1.99 #BDB2B7
+: LB combined_1.99 #71B2E0
+: B combined_1.99 #2200FF
+
+
+
+// MarCNV vs ISV
+
+P MarCNV  [8]  P ISV
+LP MarCNV  [3]  P ISV #FF4A0B
+VUS MarCNV  [8]  P ISV #DE6063
+P MarCNV  [1]  VUS ISV #DE6063
+VUS MarCNV  [24]  VUS ISV
+VUS MarCNV  [18]  B ISV #7059DB
+B MarCNV  [1]  B ISV
+
+: P ISV #FF0E0E
+: VUS ISV #BDB2B7
+: B ISV #2200FF
+
+: P MarCNV #FF0E0E
+: LP MarCNV #FF8608
+: VUS MarCNV #BDB2B7
+: B MarCNV #2200FF
+
+
+
+// ClinVar vs combined on test set (Testing basic, Testing >5MBp, and Testing multiple)
+
+P ClinVar  [3305]  P combined
+B ClinVar  [21]  P combined #DE6063
+P ClinVar  [245]  LP combined #FF4A0B
+B ClinVar  [2]  LP combined #7059DB
+P ClinVar  [547]  VUS combined #DE6063
+B ClinVar  [890]  VUS combined #7059DB
+P ClinVar  [10]  LB combined #DE6063
+B ClinVar  [12]  LB combined #4A59F0
+P ClinVar  [57]  B combined #DE6063
+B ClinVar  [4055]  B combined
+
+: P ClinVar #FF0E0E
+: B ClinVar #2200FF
+
+: P combined #FF0E0E
+: LP combined #FF8608
+: VUS combined #BDB2B7
+: LB combined #71B2E0
+: B combined #2200FF
+
